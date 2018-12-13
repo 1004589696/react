@@ -1,0 +1,25 @@
+1、对于webpack4.x版本新添加了默认的特性：
+
+    1.默认的打包入口是src/index.js
+    2.默认的输出口是dist/main.js
+
+2、html-webpack-plugin
+
+    生成html文件
+    将 webpack 中文件打包后生成的js文件和抽取的css样式，插入到该插件提供的`template`或者`templateContent`配置项指定的内容基础上生成一个html文件
+
+    {
+        template: path.join(__dirname, 'default_index.ejs'), // 本地模板文件的位置
+        filename: 'index.html', // 输出文件的文件名称，默认为index.html
+        hash: false, // 是否为静态资源添加webpack每次编译产生的唯一hash值
+        inject: true,
+        compile: true,
+        favicon: false, // 添加特定favicon路径到输出的html文档中
+        minify: false,
+        cache: true,
+        showErrors: true,
+        chunks: 'all',
+        excludeChunks: [],
+        title: 'Webpack App', // 生成的html文档的标题
+        xhtml: false
+    }
