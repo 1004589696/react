@@ -6,13 +6,13 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 //生成html文件的插件
 const htmlPlugin = new HtmlWebpackPlugin({
-    template: path.join(__dirname, '../src/index.html'),//模板文件
+    template: path.join(__dirname, '../index.html'),//模板文件
     filename: 'index.html'//生成文件名
 });
 
 //独立打包css文件插件
 const cssPlugin = new MiniCssExtractPlugin({
-    filename: "index.css",
+    filename: "css/[name].css",
     chunkFilename: "[id].css"
 });
 

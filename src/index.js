@@ -1,26 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-    HashRouter as Router,
-    Route,
-    Link
-} from 'react-router-dom'
+import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 
-import About from './home'
+import Home from './pages/home/home';
+import Login from './pages/login/login'
 
-
-class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <Route exact path="/" component={About}/>
-            </div>
-        )
-    }
-}
 
 ReactDOM.render((
     <Router>
-        <App/>
+        <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/login" component={Login}/>
+        </Switch>
     </Router>
 ), document.getElementById('root'));
